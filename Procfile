@@ -1,0 +1,1 @@
+web: python ocd/manage.py runserver $IP:$PORT
