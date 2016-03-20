@@ -11,7 +11,7 @@ boundaries.register('Philadelphia City Council Districts',
     domain='Philadelphia, PA, USA',
     authority='Philadelphia City Planning Commission',
     source_url='https://www.opendataphilly.org/dataset/city-council-districts',
-    start_date=date(2016, 01, 01),
+    start_date=date(2016, 1, 1),
     name_func=boundaries.clean_attr('DISTRICT'),
     id_func=boundaries.attr('OBJECTID'),
 )
