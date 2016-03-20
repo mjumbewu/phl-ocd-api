@@ -80,11 +80,12 @@ WSGI_APPLICATION = 'ocd.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 import dj_database_url
+DATABASE_URL = os.environ.get('DATABASE_URL').replace('postgres://', 'postgis://')
 DATABASES = {
-    'default': dj_database_url.config(default={
+    'default': dj_database_url.parse(DATABASE_URL) or {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    })
+    }
 }
 
 
